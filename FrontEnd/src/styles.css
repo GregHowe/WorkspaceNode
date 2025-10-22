@@ -103,7 +103,7 @@ button:hover {
   border-radius: 8px;
   color: white;
   max-width: 400px;
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
 
   margin-top: 1rem;
   padding: 0.5rem;
@@ -221,3 +221,8 @@ h3{
   text-overflow: ellipsis;
 }
 
+h2{
+  background-color: transparent;
+  margin-top: 10px;
+    margin-bottom: 0px;
+}

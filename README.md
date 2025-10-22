@@ -29,9 +29,12 @@ cd coworking-reservas
 ```
 
 📘 Backend
+```
 cd backend
 npm install
+```
 
+```
 Crear archivo .env con:
 PORT=8181
 API_KEY=mi_api_key_valida
@@ -40,12 +43,13 @@ DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=tu_password
 DB_NAME=coworking
+```
 
 Ejecutar en desarrollo:
-npm run dev
+```npm run dev```
 
 Ejecutar pruebas:
-npm run test
+```npm run test```
 
 Incluye:
 
@@ -55,8 +59,10 @@ Incluye:
 
 
 💻 Frontend
+```
 cd ../frontend
 npm install
+```
 
 Crear archivo .env con:
 VITE_API_URL=http://localhost:8181
@@ -91,10 +97,10 @@ npm run dev
 
 
 📡 Bonus IoT
-
+```
 El backend y frontend están conectados al tópico MQTT:
 sites/SITE_A/offices/OFFICE_1/telemetry
-
+```
 Se procesan y visualizan los siguientes datos:
 
     Ocupación
@@ -111,7 +117,7 @@ Se procesan y visualizan los siguientes datos:
 
 
 🧠 Uso de Inteligencia Artificial
-
+```
 Se utilizó IA como herramienta puntual para:
 
     Generar ejemplos de pruebas
@@ -123,15 +129,16 @@ Se utilizó IA como herramienta puntual para:
     Sugerir estructura modular
 
 Todas las decisiones de arquitectura, lógica y validaciones fueron diseñadas manualmente. Ver archivo backend/IA.md para más detalles.
-
+```
 
 
 🐳 Docker (opcional)
+```
 
 Si deseas levantar el proyecto con contenedores:
 
 docker-compose up
-
+```
 
 ✅ Requisitos cumplidos
 
@@ -150,8 +157,7 @@ docker-compose up
     Frontend funcional con React
 
 🕒 Tiempo de desarrollo
+```
 
     Este proyecto fue desarrollado en 4 días, cumpliendo el plazo establecido por la prueba técnica.
-    
----
-    Este es tu README general, Richard. Todo en uno, con formato profesional, sin fragmentaciones. Si quieres que lo revise con tu nombre de usuario real de GitHub o que prepare los `.env.example`, lo hacemos enseguida.
+``` 

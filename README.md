@@ -35,7 +35,8 @@ npm install
 ```
 
 ```
-Crear archivo .env con:
+Crear archivo 
+.env con:
 ```
 ```
 PORT=8181
@@ -69,6 +70,7 @@ npm install
 ```
 ```
 Crear archivo 
+```
 .env con:
 ```
 VITE_API_URL=http://localhost:8181

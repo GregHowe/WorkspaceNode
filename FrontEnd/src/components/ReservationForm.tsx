@@ -14,7 +14,6 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
   const [date, setDate] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
-  const [spaceId, setSpaceId] = useState('');
   const [message, setMessage] = useState('');
   const [spaces, setSpaces] = useState([]);
   const [selectedSpaceId, setSelectedSpaceId] = useState('');
@@ -26,10 +25,8 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
     }
   })
   .then((res) => {
-     console.log('Espacios cargados', res);
-    setSpaces(res.data.data); // ajusta si tu backend devuelve otra estructura
-    // debugger;
-    // console.log('Espacios cargados', res.data);
+    setSpaces(res.data.data);
+    console.log('Espacios cargados:', res.data.data);
   })
   .catch((err) => {
     console.error('Error cargando espacios', err);
@@ -41,7 +38,7 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
     e.preventDefault();
 
     
-  const error = validateReservation({ user, date, startTime, endTime, spaceId });
+  const error = validateReservation({ user, date, startTime, endTime, spaceId: selectedSpaceId });
   if (error) {
     setMessage(error);
     return;
@@ -50,7 +47,7 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
     try {
       await axios.post(
         `${apiUrl}/api/reservations`,
-        { user, date, startTime, endTime, spaceId: Number(spaceId) },
+        { user, date, startTime, endTime, spaceId: Number(selectedSpaceId) },
         { headers: { 'x-api-key': apiKey } }
       );
       setMessage('✅ Reserva creada exitosamente.');
@@ -58,7 +55,7 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
       setDate('');
       setStartTime('');
       setEndTime('');
-      setSpaceId('');
+      setSelectedSpaceId('');
       onReservationCreated();
     } catch (error) {
       console.error('Error al crear la reserva:', error);
@@ -78,9 +75,8 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
       <span>Date: <input type="date" value={date} onChange={e => setDate(e.target.value)} /></span>
       <span>Start Time: <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} /></span>
       <span>End Time:<input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} /></span>
-      {/* <span>Space<input type="number" placeholder="ID del espacio" value={spaceId} onChange={e => setSpaceId(e.target.value)} /></span> */}
       <span>Space: &nbsp;
-        <select          value={selectedSpaceId}           onChange={(e) => setSelectedSpaceId(e.target.value)}          required        >
+        <select          value={selectedSpaceId}           onChange={(e) => setSelectedSpaceId(e.target.value)}           >
           <option value="">Selecciona un espacio</option>
           {spaces.map((space) => (
             <option key={space.id} value={space.id}>

@@ -70,10 +70,12 @@ Crear archivo .env con:
 ```
 VITE_API_URL=http://localhost:8181
 VITE_API_KEY=mi_api_key_valida
+```
 
 Ejecutar en desarrollo:
+```
 npm run dev
-
+```
 
 🧩 Funcionalidades implementadas
 
@@ -115,7 +117,7 @@ Se procesan y visualizan los siguientes datos:
     Humedad
 
     Nivel de batería
-
+```
 
 
 

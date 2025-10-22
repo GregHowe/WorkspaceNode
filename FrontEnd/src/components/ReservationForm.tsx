@@ -16,10 +16,31 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
   const [endTime, setEndTime] = useState('');
   const [spaceId, setSpaceId] = useState('');
   const [message, setMessage] = useState('');
+  const [spaces, setSpaces] = useState([]);
+  const [selectedSpaceId, setSelectedSpaceId] = useState('');
+
+  useEffect(() => {
+  axios.get(`${apiUrl}/api/spaces`, {
+    headers: {
+      'x-api-key': apiKey
+    }
+  })
+  .then((res) => {
+     console.log('Espacios cargados', res);
+    setSpaces(res.data.data); // ajusta si tu backend devuelve otra estructura
+    // debugger;
+    // console.log('Espacios cargados', res.data);
+  })
+  .catch((err) => {
+    console.error('Error cargando espacios', err);
+  });
+}, []);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    
   const error = validateReservation({ user, date, startTime, endTime, spaceId });
   if (error) {
     setMessage(error);
@@ -28,7 +49,7 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
 
     try {
       await axios.post(
-        `${apiUrl}/reservations`,
+        `${apiUrl}/api/reservations`,
         { user, date, startTime, endTime, spaceId: Number(spaceId) },
         { headers: { 'x-api-key': apiKey } }
       );
@@ -57,7 +78,17 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
       <span>Date: <input type="date" value={date} onChange={e => setDate(e.target.value)} /></span>
       <span>Start Time: <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} /></span>
       <span>End Time:<input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} /></span>
-      <span>Space<input type="number" placeholder="ID del espacio" value={spaceId} onChange={e => setSpaceId(e.target.value)} /></span>
+      {/* <span>Space<input type="number" placeholder="ID del espacio" value={spaceId} onChange={e => setSpaceId(e.target.value)} /></span> */}
+      <span>Space: &nbsp;
+        <select          value={selectedSpaceId}           onChange={(e) => setSelectedSpaceId(e.target.value)}          required        >
+          <option value="">Selecciona un espacio</option>
+          {spaces.map((space) => (
+            <option key={space.id} value={space.id}>
+              {space.name} ({space.type}) - Capacidad: {space.capacity}
+            </option>
+          ))}
+        </select>
+      </span>
       
       <button type="submit">Reservar</button>
       {message && (

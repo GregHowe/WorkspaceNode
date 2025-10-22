@@ -11,6 +11,7 @@ Este proyecto resuelve la prueba técnica de **Darien Technology** para la gesti
 
 ## 📁 Estructura del repositorio
 
+```markdown
 coworking-reservas/ 
 ├── backend/ → API REST con lógica de negocio y telemetría 
 ├── frontend/ → Interfaz React para clientes y administradores

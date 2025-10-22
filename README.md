@@ -73,6 +73,7 @@ Crear archivo
 ```
 .env con:
 ```
+```
 VITE_API_URL=http://localhost:8181
 VITE_API_KEY=mi_api_key_valida
 ```

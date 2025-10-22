@@ -35,10 +35,24 @@ return (
     {/* Formulario para crear nueva reserva */}
     <ReservationForm onReservationCreated={() => setPage(1)} />
 
+  <hr className="divider" />
+  <h3 className="section-title">Reservas Existentes</h3>
+
+
+{/* Encabezado de columnas */}
+<div className="reservation-row header">
+  <div className="cell"><strong>Usuario</strong></div>
+  <div className="cell"><strong>Fecha</strong></div>
+  <div className="cell"><strong>Espacio</strong></div>
+  <div className="cell"><strong>Inicio</strong></div>
+  <div className="cell"><strong>Fin</strong></div>
+</div>
+
     {/* Lista de reservas */}
     {reservations.length === 0 ? (
       <p>No reservations found.</p>
     ) : (
+      
       reservations.map(reservation => (
         <ReservationCard key={reservation.id} reservation={reservation} />
       ))

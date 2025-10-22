@@ -12,7 +12,6 @@ const SpacesPage: React.FC = () => {
     const fetchSpaces = async () => {
       try {
         const data = await getSpaces();
-        debugger;
         setSpaces(data.data);
       } catch (err) {
         setError('Failed to load spaces.');

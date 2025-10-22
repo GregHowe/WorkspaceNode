@@ -35,36 +35,46 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
 
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+        e.preventDefault();
+        
+      const error = validateReservation({ user, date, startTime, endTime, spaceId: selectedSpaceId });
+      if (error) {
+        setMessage(error);
+        return;
+      }
 
-    
-  const error = validateReservation({ user, date, startTime, endTime, spaceId: selectedSpaceId });
-  if (error) {
-    setMessage(error);
-    return;
-  }
+    const reservationPayload = {
+      user,
+      date,
+      startTime,
+      endTime,
+      spaceId: Number(selectedSpaceId)
+    };
+
+    console.log('🟦 Payload enviado a POST /reservations:', reservationPayload);
 
     try {
-      await axios.post(
-        `${apiUrl}/api/reservations`,
-        { user, date, startTime, endTime, spaceId: Number(selectedSpaceId) },
-        { headers: { 'x-api-key': apiKey } }
-      );
-      setMessage('✅ Reserva creada exitosamente.');
-      setUser('');
-      setDate('');
-      setStartTime('');
-      setEndTime('');
-      setSelectedSpaceId('');
-      onReservationCreated();
-    } catch (error) {
-      console.error('Error al crear la reserva:', error);
-        if (error.response && error.response.data && error.response.data.message) {
-            setMessage(`❌ ${error.response.data.message}`);
+        await axios.post(`${apiUrl}/api/reservations`, reservationPayload, {
+              headers: { 'x-api-key': apiKey }
+            });
+        setMessage('✅ Reservation created successfully.');
+        setUser('');
+        setDate('');
+        setStartTime('');
+        setEndTime('');
+        setSelectedSpaceId('');
+        onReservationCreated();
+      } catch (error) {
+        console.error('❌ Error al crear la reserva:', error);
+        const backendMessage = error.response?.data?.msg;
+        if (backendMessage === 'Weekly limit exceeded') {
+            setMessage('⚠️ You cannot make more than 3 reservations per week.');
+        } else if (backendMessage) {
+            setMessage(`❌  Business error: ${backendMessage}`);
         } else {
-            setMessage('❌ Error al crear la reserva. Intenta nuevamente.');
+            setMessage('❌ Technical error while creating the reservation. Please try again.');
         }
-    }
+      }
   };
 
   return (

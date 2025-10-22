@@ -29,18 +29,18 @@ export function validateReservation(input: ReservationInput): string | null {
   const selectedDate = getLocalDate(date); // ← convierte "YYYY-MM-DD" a fecha local
 
   if (selectedDate < todayLocal) {
-    return '⚠️ La fecha no puede ser anterior a hoy.';
+    return '⚠️ The date cannot be earlier than today.';
   }
 
   // Validación de rango horario
   if (startTime >= endTime) {
-    return '⚠️ La hora de inicio debe ser menor que la hora de fin.';
+    return '⚠️ The start time must be earlier than the end time.';
   }
 
   // Validación de espacio
   const spaceIdNum = Number(spaceId);
   if (isNaN(spaceIdNum) || spaceIdNum <= 0) {
-    return '⚠️ El espacio seleccionado no es válido.';
+    return '⚠️ The selected space is not valid.';
   }
 
   return null; // ✅ Todo válido

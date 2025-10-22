@@ -124,9 +124,6 @@ Se procesan y visualizan los siguientes datos:
 
     Nivel de batería
 ```
-
-
-
 🧠 Uso de Inteligencia Artificial
 ```
 Se utilizó IA como herramienta puntual para:

@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import { validateApiKey } from  './middleware/validateApiKey ';
 import 'dotenv/config';
@@ -17,6 +18,13 @@ import './mqtt/client';
 dotenv.config();
 
 const app = express();
+
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  allowedHeaders: ['Content-Type', 'x-api-key'],
+}));
+
 app.use(express.json());
 
 // Apply API key middleware globally

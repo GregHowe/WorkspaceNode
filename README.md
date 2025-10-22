@@ -37,6 +37,7 @@ npm install
 ```
 Crear archivo .env con:
 ```
+```
 PORT=8181
 API_KEY=mi_api_key_valida
 DB_HOST=localhost

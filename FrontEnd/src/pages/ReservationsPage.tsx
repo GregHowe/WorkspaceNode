@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getReservations } from '../api/reservations';
 import { Reservation } from '../types/Reservation';
 import ReservationCard from '../components/ReservationCard';
+import ReservationForm from '../components/ReservationForm';
 
 const ReservationsPage: React.FC = () => {
   const [reservations, setReservations] = useState<Reservation[]>([]);
@@ -27,23 +28,31 @@ const ReservationsPage: React.FC = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
-  return (
-    <div>
-      <h2>Reservations</h2>
-      {reservations.length === 0 ? (
-        <p>No reservations found.</p>
-      ) : (
-        reservations.map(reservation => (
-          <ReservationCard key={reservation.id} reservation={reservation} />
-        ))
-      )}
-      <div style={{ marginTop: '1rem' }}>
-        <button onClick={() => setPage(prev => Math.max(prev - 1, 1))}>Previous</button>
-        <span style={{ margin: '0 1rem' }}>Page {page}</span>
-        <button onClick={() => setPage(prev => prev + 1)}>Next</button>
-      </div>
+return (
+  <div className="container">
+    <h2>Reservations</h2>
+
+    {/* Formulario para crear nueva reserva */}
+    <ReservationForm onReservationCreated={() => setPage(1)} />
+
+    {/* Lista de reservas */}
+    {reservations.length === 0 ? (
+      <p>No reservations found.</p>
+    ) : (
+      reservations.map(reservation => (
+        <ReservationCard key={reservation.id} reservation={reservation} />
+      ))
+    )}
+
+    {/* Paginación */}
+    <div style={{ marginTop: '1rem' }}>
+      <button onClick={() => setPage(prev => Math.max(prev - 1, 1))}>Previous</button>
+      <span style={{ margin: '0 1rem' }}>Page {page}</span>
+      <button onClick={() => setPage(prev => prev + 1)}>Next</button>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default ReservationsPage;

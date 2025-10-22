@@ -28,12 +28,15 @@ const SpacesPage: React.FC = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
-      <h2>Available Spaces</h2>
+    <div className="container">
+       <h2 style={{ textAlign: 'center' }}>Available Spaces</h2>
+      <div className="card-grid">
       {spaces.map(space => (
         <SpaceCard key={space.id} space={space} />
       ))}
-    </div>
+          </div>
+      </div>    
+
   );
 };
 

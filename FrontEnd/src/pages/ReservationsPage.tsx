@@ -9,13 +9,16 @@ const ReservationsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(2); // Valor inicial recomendado
+  const [limit, setLimit] = useState(5);
+  const [total, setTotal] = useState(0);
+  const maxPage = Math.ceil(total / limit);
 
   useEffect(() => {
     const fetchReservations = async () => {
       try {
         const response = await getReservations(page, limit);
         setReservations(response.data);
+        setTotal(response.pagination.total); 
       } catch (err) {
         setError('Failed to load reservations.');
       } finally {
@@ -24,7 +27,7 @@ const ReservationsPage: React.FC = () => {
     };
 
     fetchReservations();
-  }, [page]);
+  }, [page, limit]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -63,14 +66,16 @@ return (
     <div style={{ marginTop: '1rem' }}>
 
       <select value={limit} onChange={e => setLimit(Number(e.target.value))}>
-        <option value={2}>2 por página</option>
+        <option value={5}>5 por página</option>
         <option value={10}>10 por página</option>
         <option value={20}>20 por página</option>
       </select>
 
       <button onClick={() => setPage(prev => Math.max(prev - 1, 1))}>Previous</button>
       <span style={{ margin: '0 1rem' }}>Page {page}</span>
-      <button onClick={() => setPage(prev => prev + 1)}>Next</button>
+      <button        onClick={() => setPage(prev => prev + 1)}        disabled={page >= maxPage}>
+        Next
+      </button>
     </div>
   </div>
 );

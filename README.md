@@ -26,6 +26,7 @@ coworking-reservas/
 ```bash
 git clone https://github.com/tu-usuario/coworking-reservas.git
 cd coworking-reservas
+```
 
 📘 Backend
 cd backend

@@ -36,6 +36,7 @@ npm install
 
 ```
 Crear archivo .env con:
+```
 PORT=8181
 API_KEY=mi_api_key_valida
 DB_HOST=localhost
@@ -159,5 +160,5 @@ docker-compose up
 🕒 Tiempo de desarrollo
 ```
 
-    Este proyecto fue desarrollado en 4 días, cumpliendo el plazo establecido por la prueba técnica.
+Este proyecto fue desarrollado en 4 días, cumpliendo el plazo establecido por la prueba técnica.
 ``` 

@@ -1,8 +1,8 @@
 import { startOfWeek, endOfWeek } from 'date-fns';
 
-export const getWeekRange = (date: Date) => {
-  const weekStart = startOfWeek(date, { weekStartsOn: 1 });
-  const weekEnd = endOfWeek(date, { weekStartsOn: 1 });
+export const getWeekRange = (reservationDate: Date) => {
+  const weekStart = startOfWeek(reservationDate, { weekStartsOn: 1 });
+  const weekEnd = endOfWeek(reservationDate, { weekStartsOn: 1 });
   return { weekStart, weekEnd };
 };
 

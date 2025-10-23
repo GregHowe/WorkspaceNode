@@ -35,21 +35,23 @@ export const getReservations = async (req: Request, res: Response) => {
 
 
 export const createReservation = async (req: Request, res: Response) => {
-  try {
-    const { user, date, spaceId, startTime, endTime } = req.body;
-    const reservationDate = new Date(date);
 
-  const exceeded = await checkWeeklyLimit(user, reservationDate);
+  try {
+    debugger;
+    const { emailClient, reservationDate, spaceId, startTime, endTime } = req.body;
+    const _reservationDate = new Date(reservationDate);
+
+  const exceeded = await checkWeeklyLimit(emailClient, _reservationDate);
   if (exceeded) {
     return res.status(400).json({ ok: false, msg: 'Weekly limit exceeded' });
   }
 
-    const overlapping = await checkOverlap(spaceId, date, startTime, endTime);
+    const overlapping = await checkOverlap(spaceId, reservationDate, startTime, endTime);
     if (overlapping) {
       return res.status(400).json({ ok: false, msg: 'Schedule conflict detected' });
     }
 
-    const saved = await createReservationRecord({ user, date, startTime, endTime, spaceId });
+    const saved = await createReservationRecord({ emailClient, reservationDate, startTime, endTime, spaceId });
     res.status(201).json({ ok: true, data: saved });
   } catch (error) {
       handleError(res, error, 'Error creating reservation');

@@ -5,4 +5,6 @@ export interface TelemetryData {
   temperature: number;
   humidity: number;
   power: number;
+   co2: number;
+   battery: number;
 }

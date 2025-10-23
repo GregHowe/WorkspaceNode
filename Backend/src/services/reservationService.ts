@@ -8,38 +8,38 @@ const reservationRepo = AppDataSource.getRepository(Reservation);
 
 // 🔹 Nuevo helper para contar reservas semanales
 export const fetchReservationCount = async (
-  user: string,
+  emailClient: string,
   start: Date,
   end: Date
 ): Promise<number> => {
   return await reservationRepo.count({
     where: {
-      user,
-      date: Between(start.toISOString(), end.toISOString())
+      emailClient,
+      reservationDate: Between(start.toISOString(), end.toISOString())
     }
   });
 };
 
 // 🔹 Refactor: ahora usa fetchReservationCount
 export const checkWeeklyLimit = async (
-  email: string,
-  date: Date
+  emailClient: string,
+  reservationDate: Date
 ): Promise<boolean> => {
-  const { weekStart, weekEnd } = getWeekRange(date);
-  const count = await fetchReservationCount(email, weekStart, weekEnd);
+  const { weekStart, weekEnd } = getWeekRange(reservationDate);
+  const count = await fetchReservationCount(emailClient, weekStart, weekEnd);
   return count >= MAX_RESERVATIONS_PER_WEEK;
 };
 
 export const checkOverlap = async (
   spaceId: number,
-  date: string,
+  reservationDate: string,
   startTime: string,
   endTime: string
 ) => {
   return await reservationRepo.findOne({
     where: {
       space: { id: spaceId },
-      date,
+      reservationDate,
       startTime: LessThan(endTime),
       endTime: MoreThan(startTime)
     }
@@ -47,15 +47,15 @@ export const checkOverlap = async (
 };
 
 export const createReservationRecord = async (data: {
-  user: string;
-  date: string;
+  emailClient: string;
+  reservationDate: string;
   startTime: string;
   endTime: string;
   spaceId: number;
 }) => {
   const reservation = reservationRepo.create({
-    user: data.user,
-    date: data.date,
+    emailClient: data.emailClient,
+    reservationDate: data.reservationDate,
     startTime: data.startTime,
     endTime: data.endTime,
     space: { id: data.spaceId }

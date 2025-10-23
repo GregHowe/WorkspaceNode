@@ -14,7 +14,7 @@ jest.mock('../../src/services/reservationService', () => ({
 }));
 
 describe('checkWeeklyLimit', () => {
-  it('should return true if user has exceeded the weekly limit', async () => {
+  it('should return true if emailClient has exceeded the weekly limit', async () => {
     const mockEmail = 'test@test.com';
     const mockDate = new Date();
     const mockReservationCount = MAX_RESERVATIONS_PER_WEEK + 1;

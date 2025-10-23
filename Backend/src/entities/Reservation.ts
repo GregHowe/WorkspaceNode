@@ -7,10 +7,10 @@ export class Reservation {
   id: number;
 
   @Column()
-  user: string;
+  emailClient : string;
 
   @Column()
-  date: string;
+  reservationDate : string;
 
   @Column()
   startTime: string;

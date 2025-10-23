@@ -12,8 +12,8 @@ export class Place {
   @Column()
   location: string;
 
-  @Column()
-  capacity: number;
+  // @Column()
+  // capacity: number;
 
   @OneToMany(() => Space, (space) => space.place)
   spaces: Space[];

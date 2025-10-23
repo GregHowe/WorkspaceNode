@@ -13,8 +13,14 @@ export class Space {
   @Column()
   capacity: number;
 
-  @Column()
-  type: string;
+  // @Column()
+  // type: string;
+
+@Column({ nullable: true })
+reference?: string;
+
+@Column({ nullable: true })
+description?: string;
 
   @ManyToOne(() => Place, (place) => place.spaces)
   place: Place;

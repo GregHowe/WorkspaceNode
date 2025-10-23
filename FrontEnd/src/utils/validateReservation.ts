@@ -10,7 +10,7 @@ export interface ReservationInput {
 
 export function validateReservation(input: ReservationInput): string | null {
   const { emailClient, reservationDate, startTime, endTime, spaceId } = input;
-
+  debugger;
   // Validación de campos obligatorios
   const missingFields: string[] = [];
   if (!emailClient) missingFields.push('Email Client');
@@ -22,6 +22,10 @@ export function validateReservation(input: ReservationInput): string | null {
   if (missingFields.length > 0) {
     return `⚠️ The following fields are missing: ${missingFields.join(', ')}.`;
   }
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailClient.trim()) return '❌ Email is required';
+  if (!emailRegex.test(emailClient)) return '❌ Invalid email format';
 
   // Validación de fecha (evita errores por zona horaria)
   const today = new Date();

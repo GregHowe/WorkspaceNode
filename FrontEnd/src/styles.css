@@ -289,3 +289,13 @@ select {
 .telemetry-row span {
   text-align: center;
 }
+
+.error {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.invalid {
+  border: 1px solid #d32f2f;
+}

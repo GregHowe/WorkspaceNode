@@ -11,6 +11,7 @@ const apiKey = import.meta.env.VITE_API_KEY;
 
 const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
   const [emailClient, setEmailClient] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [reservationDate, setReservationDate] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
@@ -51,8 +52,6 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
       spaceId: Number(selectedSpaceId)
     };
 
-    console.log('🟦 Payload enviado a POST /reservations:', reservationPayload);
-
     try {
         await axios.post(`${apiUrl}/api/reservations`, reservationPayload, {
               headers: { 'x-api-key': apiKey }
@@ -81,7 +80,29 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
     <form onSubmit={handleSubmit} className="reservation-form">
       <h3>Crear Reserva</h3>
       
-      <span>Email Client: <input type="text" placeholder="Email Client" value={emailClient} onChange={e => setEmailClient(e.target.value)} /></span>
+    <span>Email Client: 
+      <input
+        type="text"
+        placeholder="Email Client"
+        value={emailClient}
+        onChange={e => {
+          const value = e.target.value;
+          setEmailClient(value);
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!value.trim()) {
+            setEmailError('❌ Email is required');
+          } else if (!emailRegex.test(value)) {
+            setEmailError('❌ Invalid email format');
+          } else {
+            setEmailError('');
+          }
+        }}
+        className={emailError ? 'invalid' : ''}
+      />
+    </span>
+    {emailError && <p className="error">{emailError}</p>}
+
       <span>Date: <input type="date" value={reservationDate} onChange={e => setReservationDate(e.target.value)} /></span>
       <span>Start Time: <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} /></span>
       <span>End Time:<input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} /></span>

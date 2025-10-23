@@ -38,11 +38,11 @@ useEffect(() => {
     const mapped: TelemetryData = {
       siteId: raw.siteId,
       officeId: raw.officeId,
-      timestamp:  raw.timestamp,
-      temperature: raw.temp_c,
-      humidity: raw.humidity_pct,
-      power: raw.power_w,
-      co2: raw.co2_ppm,
+      timestamp: raw.timestamp,
+      temperature: raw.temperature,
+      humidity: raw.humidity,
+      power: raw.power,
+      co2: raw.co2,
       occupancy: raw.occupancy,
     };
 

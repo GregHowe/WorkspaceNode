@@ -204,21 +204,24 @@ h3{
 
 .reservation-row {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1.5fr 1fr 1fr;
-  gap: 1rem;
-  padding: 0.6rem 1rem;
-  margin-bottom: 0.5rem;
-  background-color: #2c2f3a;
-  color: #fff;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
   align-items: center;
 }
 
+.reservation-row.header {
+font-weight: bold;
+  background-color: #06060f;
+  border-bottom: 2px solid #ccc;
+}
+
+
 .cell {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+ flex: 1;
+  min-width: 120px;
+  padding: 0 0.5rem;
+  word-break: break-word;
 }
 
 h2{

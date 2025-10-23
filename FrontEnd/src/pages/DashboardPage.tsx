@@ -8,72 +8,29 @@ const DashboardPage: React.FC = () => {
   const [officeId, setOfficeId] = useState('OFFICE_1');
   const [telemetry, setTelemetry] = useState<TelemetryData[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
 
-const [startDate, setStartDate] = useState('');
-const [endDate, setEndDate] = useState('');
-const [groupBy, setGroupBy] = useState('date');
-
-  // const fetchTelemetry = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await getTelemetry(siteId, officeId);
-  //     setTelemetry(response);
-  //   } catch (err) {
-  //     setError('Failed to load telemetry data.');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-const handleFilterSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setLoading(true);
-  setError(false);
-
-  try {
-    const response = await getTelemetry({
-      siteId,
-      officeId,
-      startDate,
-      endDate,
-      groupBy,
-    });
-    setTelemetry(response.data);
-  } catch (err) {
-    setError(true);
-  } finally {
-    setLoading(false);
-  }
-};
-
-useEffect(() => {
-  const loadDefaultTelemetry = async () => {
+  const fetchTelemetry = async () => {
+    setLoading(true);
     try {
-      const response = await getTelemetry({
-        siteId: 'SITE_A',
-        officeId: 'OFFICE_1',
-        startDate: '2025-10-22',
-        endDate: '2025-10-22',
-        groupBy: 'timestamp', // ✅ más abajo explico esto
-      });
-      setTelemetry(response.data);
+      const response = await getTelemetry(siteId, officeId);
+      setTelemetry(response);
     } catch (err) {
-      setError(true);
+      setError('Failed to load telemetry data.');
     } finally {
       setLoading(false);
     }
   };
 
-  loadDefaultTelemetry();
-}, []);
-
+  useEffect(() => {
+    fetchTelemetry();
+  }, [siteId, officeId]);
 
   return (
     <div>
       <h2>Telemetry Dashboard</h2>
 
-      {/* <div style={{ marginBottom: '1rem' }}>
+      <div style={{ marginBottom: '1rem' }}>
         <label>
           Site ID:
           <input value={siteId} onChange={e => setSiteId(e.target.value)} />
@@ -82,61 +39,7 @@ useEffect(() => {
           Office ID:
           <input value={officeId} onChange={e => setOfficeId(e.target.value)} />
         </label>
-      </div> */}
-
-    <form onSubmit={handleFilterSubmit} style={{ marginBottom: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-      <label>
-        Site ID:
-        <input
-          type="text"
-          value={siteId}
-          onChange={(e) => setSiteId(e.target.value)}
-          required
-        />
-      </label>
-
-      <label>
-        Office ID:
-        <input
-          type="text"
-          value={officeId}
-          onChange={(e) => setOfficeId(e.target.value)}
-          required
-        />
-      </label>
-
-      <label>
-        Start Date:
-        <input
-          type="date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-          required
-        />
-      </label>
-
-      <label>
-        End Date:
-        <input
-          type="date"
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
-          required
-        />
-      </label>
-
-      <label>
-        Group By:
-        <select value={groupBy} onChange={(e) => setGroupBy(e.target.value)}>
-          <option value="date">Fecha</option>
-          <option value="hour">Hora</option>
-        </select>
-      </label>
-
-      <button type="submit">Filtrar</button>
-    </form>
-
-
+      </div>
 
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}

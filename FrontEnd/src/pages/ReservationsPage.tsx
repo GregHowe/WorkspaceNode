@@ -13,7 +13,6 @@ const ReservationsPage: React.FC = () => {
   const [total, setTotal] = useState(0);
   const maxPage = Math.ceil(total / limit);
 
-  useEffect(() => {
     const fetchReservations = async () => {
       try {
         const response = await getReservations(page, limit);
@@ -26,7 +25,9 @@ const ReservationsPage: React.FC = () => {
       }
     };
 
-    fetchReservations();
+  useEffect(() => {
+    setLoading(true);
+    fetchReservations(page, limit);
   }, [page, limit]);
 
   if (loading) return <p>Loading...</p>;
@@ -37,7 +38,11 @@ return (
     <h2>Reservations</h2>
 
     {/* Formulario para crear nueva reserva */}
-    <ReservationForm onReservationCreated={() => setPage(1)} />
+    <ReservationForm onReservationCreated={() => { 
+      setPage(1);
+      setLoading(true);
+      fetchReservations(1, limit);
+      }} />
 
   <hr className="divider" />
   <h3 className="section-title">Reservas Existentes</h3>

@@ -8,13 +8,13 @@ interface Props {
 const ReservationCard: React.FC<Props> = ({ reservation }) => {
   return (
     <>
-      <div className="reservation-row">
-        <div className="cell">{reservation.user}</div>
-        <div className="cell">{reservation.date}</div>
-        <div className="cell">{reservation.space.name}</div>
-        <div className="cell">{reservation.startTime}</div>
-        <div className="cell">{reservation.endTime}</div>
-      </div>
+    <div className="reservation-row">
+      <div className="cell">{reservation.emailClient}</div>
+      <div className="cell">{reservation.reservationDate}</div>
+      <div className="cell">{reservation.space.name}</div>
+      <div className="cell">{reservation.startTime}</div>
+      <div className="cell">{reservation.endTime}</div>
+    </div>
     </>
   );
 };

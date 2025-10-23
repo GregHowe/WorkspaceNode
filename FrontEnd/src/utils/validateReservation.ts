@@ -1,20 +1,20 @@
 import { getLocalDate } from './getLocalDate';
 
 export interface ReservationInput {
-  user: string;
-  date: string;
+  emailClient: string;
+  reservationDate: string;
   startTime: string;
   endTime: string;
   spaceId: string;
 }
 
 export function validateReservation(input: ReservationInput): string | null {
-  const { user, date, startTime, endTime, spaceId } = input;
+  const { emailClient, reservationDate, startTime, endTime, spaceId } = input;
 
   // Validación de campos obligatorios
   const missingFields: string[] = [];
-  if (!user) missingFields.push('User');
-  if (!date) missingFields.push('Date');
+  if (!emailClient) missingFields.push('Email Client');
+  if (!reservationDate) missingFields.push('Reservation Date');
   if (!startTime) missingFields.push('Start Time');
   if (!endTime) missingFields.push('End Time');
   if (!spaceId) missingFields.push('Space');
@@ -26,7 +26,7 @@ export function validateReservation(input: ReservationInput): string | null {
   // Validación de fecha (evita errores por zona horaria)
   const today = new Date();
   const todayLocal = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  const selectedDate = getLocalDate(date); // ← convierte "YYYY-MM-DD" a fecha local
+  const selectedDate = getLocalDate(reservationDate); // ← convierte "YYYY-MM-DD" a fecha local
 
   if (selectedDate < todayLocal) {
     return '⚠️ The date cannot be earlier than today.';

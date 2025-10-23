@@ -10,8 +10,8 @@ const apiUrl = import.meta.env.VITE_API_URL;
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
-  const [user, setUser] = useState('');
-  const [date, setDate] = useState('');
+  const [emailClient, setEmailClient] = useState('');
+  const [reservationDate, setReservationDate] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [message, setMessage] = useState('');
@@ -37,15 +37,15 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
   const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         
-      const error = validateReservation({ user, date, startTime, endTime, spaceId: selectedSpaceId });
+      const error = validateReservation({ emailClient, reservationDate, startTime, endTime, spaceId: selectedSpaceId });
       if (error) {
         setMessage(error);
         return;
       }
 
     const reservationPayload = {
-      user,
-      date,
+      emailClient,
+      reservationDate,
       startTime,
       endTime,
       spaceId: Number(selectedSpaceId)
@@ -58,8 +58,8 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
               headers: { 'x-api-key': apiKey }
             });
         setMessage('✅ Reservation created successfully.');
-        setUser('');
-        setDate('');
+        setEmailClient('');
+        setReservationDate('');
         setStartTime('');
         setEndTime('');
         setSelectedSpaceId('');
@@ -81,8 +81,8 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
     <form onSubmit={handleSubmit} className="reservation-form">
       <h3>Crear Reserva</h3>
       
-      <span>User: <input type="text" placeholder="Usuario" value={user} onChange={e => setUser(e.target.value)} /></span>
-      <span>Date: <input type="date" value={date} onChange={e => setDate(e.target.value)} /></span>
+      <span>Email Client: <input type="text" placeholder="Email Client" value={emailClient} onChange={e => setEmailClient(e.target.value)} /></span>
+      <span>Date: <input type="date" value={reservationDate} onChange={e => setReservationDate(e.target.value)} /></span>
       <span>Start Time: <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} /></span>
       <span>End Time:<input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} /></span>
       <span>Space: &nbsp;

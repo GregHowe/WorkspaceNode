@@ -1,9 +1,9 @@
 import { AppDataSource } from '../config/data-source';
 import { Telemetry } from '../entities/Telemetry';
-import { Between } from 'typeorm';
-import { queryGroupByDay } from '../queries/telemetry/groupByDay';
-import { queryGroupBySiteId } from '../queries/telemetry/groupBySiteId';
-import { queryGroupByOfficeId } from '../queries/telemetry/groupByOfficeId';
+// import { Between } from 'typeorm';
+// import { queryGroupByDay } from '../queries/telemetry/groupByDay';
+// import { queryGroupBySiteId } from '../queries/telemetry/groupBySiteId';
+// import { queryGroupByOfficeId } from '../queries/telemetry/groupByOfficeId';
 import { isValidTelemetryPayload } from '../utils/telemetryValidator';
 import { TelemetryPayload } from '../types/TelemetryPayload';
 import { mapTelemetryRow } from '../utils/telemetryMapper';
@@ -28,41 +28,41 @@ export const saveTelemetry = async (siteId: string, officeId: string, data: Tele
   return AppDataSource.manager.save(telemetry);
 };
 
-const groupByQueryMap: Record<string, string> = {
-  day: queryGroupByDay,
-  siteId: queryGroupBySiteId,
-  officeId: queryGroupByOfficeId
-};
+// const groupByQueryMap: Record<string, string> = {
+//   day: queryGroupByDay,
+//   siteId: queryGroupBySiteId,
+//   officeId: queryGroupByOfficeId
+// };
 
-export const getTelemetryRawGrouped = async (
-  groupBy: string,
-  siteId: string,
-  officeId: string,
-  startDate: string,
-  endDate: string
-) => {
-  const query = groupByQueryMap[groupBy];
-  if (!query) {
-    throw new Error(`Unsupported groupBy: ${groupBy}`);
-  }
+// export const getTelemetryRawGrouped = async (
+//   groupBy: string,
+//   siteId: string,
+//   officeId: string,
+//   startDate: string,
+//   endDate: string
+// ) => {
+//   const query = groupByQueryMap[groupBy];
+//   if (!query) {
+//     throw new Error(`Unsupported groupBy: ${groupBy}`);
+//   }
 
-  const baseParams = [siteId, officeId, startDate, endDate];
-  return AppDataSource.manager.query(query, baseParams);
-};
+//   const baseParams = [siteId, officeId, startDate, endDate];
+//   return AppDataSource.manager.query(query, baseParams);
+// };
 
 export const getTelemetryRaw = async (
-  siteId: string,
+/*  siteId: string,
   officeId: string,
   startDate?: string,
-  endDate?: string
+  endDate?: string*/
 ) => {
-  const where: any = { siteId, officeId };
-  if (startDate && endDate) {
-    where.ts = Between(new Date(startDate), new Date(endDate));
-  }
+  // const where: any = { siteId, officeId };
+  // if (startDate && endDate) {
+  //   where.ts = Between(new Date(startDate), new Date(endDate));
+  // }
 
   const rows = await AppDataSource.manager.find(Telemetry, {
-    where,
+    // where,
     order: { ts: 'DESC' },
     take: 50,
   });

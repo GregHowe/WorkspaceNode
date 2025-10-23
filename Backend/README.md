@@ -35,7 +35,7 @@ Crea un archivo `.env` en la raíz del backend con:
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=root
-DB_PASS=Jumpstart0!
+DB_PASSWORD=Jumpstart0!
 DB_NAME=workspace_db
 
 API_KEY=tu_api_key_valida

@@ -1,3 +1,4 @@
+import { broadcastTelemetry } from '../websocketServer';
 import mqtt from 'mqtt';
 import { DEFAULT_MQTT_BROKER, DEFAULT_MQTT_TOPIC } from '../config/constants';
 import { saveTelemetry } from '../services/telemetryService';
@@ -23,7 +24,19 @@ client.on('message', async (topic, payload) => {
 
   try {
     await saveTelemetry(siteId, officeId, data);
-    console.log('💾 Telemetry saved');
+
+    broadcastTelemetry({
+      siteId,
+      officeId,
+      timestamp: new Date(data.ts).toISOString(),
+      temperature: data.temp_c,
+      humidity: data.humidity_pct,
+      power: data.power_w,
+      co2: data.co2_ppm,
+      occupancy: data.occupancy,
+    });
+
+    // console.log('💾 Telemetry saved');
   } catch (err) {
     console.error('❌ Error saving telemetry:', err.message);
   }

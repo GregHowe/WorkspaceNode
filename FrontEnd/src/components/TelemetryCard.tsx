@@ -15,7 +15,9 @@ const TelemetryCard: React.FC<Props> = ({ telemetry }) => {
       <span>{telemetry.power}</span>
       <span>{telemetry.co2}</span>
       <span>{telemetry.occupancy}</span>
-      <span>{new Date(telemetry.timestamp).toLocaleString()}</span>
+      <span>
+        {telemetry.timestamp ? new Date(telemetry.timestamp).toLocaleString() : '–'}
+      </span>
     </div>
   );
 };

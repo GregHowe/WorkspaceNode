@@ -20,9 +20,39 @@ const DashboardPage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
+useEffect(() => {
     fetchTelemetry();
-  }, []);
+
+    const socket = new WebSocket(`ws://localhost:${import.meta.env.VITE_WS_PORT}`);
+
+      // ✅ Confirmación visual de conexión
+    socket.onopen = () => {
+      console.log('✅ WebSocket connection established');
+    };
+    socket.onerror = err => {
+      console.error('❌ WebSocket error:', err);
+    };
+    socket.onmessage = event => {
+      const raw = JSON.parse(event.data);
+
+    const mapped: TelemetryData = {
+      siteId: raw.siteId,
+      officeId: raw.officeId,
+      timestamp:  raw.timestamp,
+      temperature: raw.temp_c,
+      humidity: raw.humidity_pct,
+      power: raw.power_w,
+      co2: raw.co2_ppm,
+      occupancy: raw.occupancy,
+    };
+
+      setTelemetry(prev => [mapped, ...prev.slice(0, 49)]);
+    };
+
+    return () => socket.close();
+    
+}, []);
+
 
   return (
     <div>
@@ -47,7 +77,7 @@ const DashboardPage: React.FC = () => {
           </div>
 
           {telemetry.map(entry => (
-            <TelemetryCard key={entry.timestamp} telemetry={entry} />
+            <TelemetryCard key={`${entry.siteId}-${entry.officeId}-${entry.timestamp}-${entry.temperature}`} telemetry={entry} />
           ))}
         </div>
       )}

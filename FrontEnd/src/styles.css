@@ -7,7 +7,7 @@ html, body {
 
 .container {
   background-color: rgb(51, 53, 68);
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   width: 100%;
@@ -262,12 +262,21 @@ select {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  background-color: #1e1e2f;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  border: 1px solid #3f3f5f;
 }
+
 
 .telemetry-header,
 .telemetry-row {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(9, minmax(120px, 1fr));
   background-color: #1e1e2f;
   color: #ffffff;
   padding: 0.75rem;
@@ -277,7 +286,7 @@ select {
 
 .telemetry-header {
   font-weight: bold;
-  background-color: #2e2e3f;
+  background-color: rgb(43, 143, 209);
   border-bottom: 2px solid #3f3f5f;
 }
 
@@ -288,14 +297,4 @@ select {
 
 .telemetry-row span {
   text-align: center;
-}
-
-.error {
-  color: #d32f2f;
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-}
-
-.invalid {
-  border: 1px solid #d32f2f;
 }

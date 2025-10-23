@@ -28,7 +28,4 @@ export class Telemetry {
 
   @Column('int')
   power_w: number;
-
-    @Column('int')
-    battery_pct: number;  
 }

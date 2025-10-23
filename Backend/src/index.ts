@@ -13,7 +13,9 @@ import placeRoutes from './routes/placeRoutes';
 import spaceRoutes from './routes/spaceRoutes';
 import reservationRoutes from './routes/reservationRoutes';
 import { validateApiKey  } from './middleware/validateApiKey ';
+import './integrations/mqttConsumer';
 import './mqtt/client';
+
 
 dotenv.config();
 

@@ -6,7 +6,7 @@ const WorkspaceHeader: React.FC = () => {
   <header className="workspace-header">
         <h1 className="workspace-title">🧠 Workspace</h1>
         <p className="workspace-subtitle">
-          Sistema de gestión de reservas para espacios de trabajo colaborativo
+          Reservation management system for collaborative workspaces
         </p>
       </header>
   );

@@ -133,6 +133,16 @@ Se utilizó IA como herramienta puntual para:
     ⚠️ gestión de errores con mensajes informativos.
 ```
 
+## ✅ Tests incluidos
+
+El proyecto incluye pruebas unitarias y de integración para validar la lógica de negocio del backend:
+
+- 🧪 `isWeeklyLimitExceeded`: función que determina si un cliente ha superado el límite de 3 reservas semanales.
+- 🧪 `checkWeeklyLimit`: prueba de integración que simula reservas reales en base de datos y verifica el cumplimiento de la restricción semanal.
+
+Estas pruebas aseguran que las reglas de negocio se cumplen correctamente y que el sistema responde con precisión ante escenarios reales.
+
+
 ## 📸 Capturas de pantalla
 
 A continuación se muestran ejemplos visuales del sistema en funcionamiento:
@@ -142,7 +152,7 @@ A continuación se muestran ejemplos visuales del sistema en funcionamiento:
     ![FrontEndTelemetriaListado](../Screenshots/frontEndTelemetriaListado.png)
 
  - 📊 Get Reservation Pagination   
- 
+
         ![Get Reservation Pagination ](./Screenshots/backendGetReservationPagination.png)
 
 Tiempo de desarrollo: este proyecto fue desarrollado en 🕒 4 días, cumpliendo el plazo establecido por la prueba técnica.

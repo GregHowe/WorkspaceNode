@@ -44,6 +44,18 @@ Funcionalidades implementadas:
 
 ```
 
+## ✅ Validaciones y pruebas
+
+El frontend incluye validaciones en tiempo real para los formularios de reserva:
+
+- ✉️ Validación de formato de email (`emailRegex`)
+- ⚠️ Validación de campos obligatorios
+- ✅ Mensaje visual de éxito tras crear una reserva
+
+Aunque no se incluyen pruebas automatizadas en el frontend, la lógica de validación ha sido probada manualmente y está integrada de forma modular en `ReservationForm.tsx`.
+
+
+
 Bonus IoT: 
 ```
 📡 Conexión al tópico MQTT sites/SITE_A/offices/OFFICE_1/telemetry 

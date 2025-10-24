@@ -81,3 +81,30 @@ Incluye:
 📡 Suscripción al tópico MQTT: sites/SITE_A/offices/OFFICE_1/telemetry 
 📊 Procesamiento de datos de sensores: CO₂, temperatura, ocupación, batería
 ```
+
+## 📸 Capturas de pantalla
+
+A continuación se muestran ejemplos visuales del sistema en funcionamiento:
+
+- 💻 Delete Reservation   
+    ![Formulario de reserva](./screenshots/backendDeleteReservation.png)
+
+- 📊 Get Reservation Pagination   
+    ![Dashboard IoT](./screenshots/backendGetReservationPagination.png)
+
+- 📬 Get Spaces  
+    ![Postman éxito](./screenshots/backendGetSpaces.png)
+
+- 💻 Get Telemetria
+    ![Postman error](./screenshots/BackendGetTelemetria.png)
+
+- 📬 Save Place
+    ![Postman error](./screenshots/BackendSavePlace.png)
+
+- 📬 Save Reservations
+    ![Postman error](./screenshots/BackendSaveReservations.png)
+
+- ⚠️ValidationApiKey
+    ![Postman error](./screenshots/backendValidationApiKey.png)
+
+

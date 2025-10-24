@@ -69,7 +69,6 @@ Requisitos cumplidos:
 
 A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 
-
 - 💻 Spaces List  
     ![Spaces List](../Screenshots/frontEndListSpaces.png)
 

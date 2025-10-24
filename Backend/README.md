@@ -1,6 +1,14 @@
 # 📘 Sistema de Gestión de Reservas (Backend)
 
-API RESTful desarrollada en Node.js para gestionar reservas en espacios de coworking. Permite a los clientes reservar salas o áreas de trabajo, valida ⛔ conflictos de horario y 🚫 límites semanales, y se integra con telemetría 📡 IoT en tiempo real.
+API RESTful desarrollada en Node.js para gestionar reservas en espacios de coworking. Permite a los clientes 
+
+```
+reservar salas o áreas de trabajo, 
+valida ⛔ conflictos de horario y 
+🚫 límites semanales, y 
+se integra con telemetría 📡 
+IoT en tiempo real.
+```
 
 Tecnologías utilizadas: 🧠 Node.js + Express, 🧪 TypeScript, 🗃️ TypeORM + MySQL, 📡 MQTT, 🧪 Jest + Supertest, ⚙️ Dotenv
 

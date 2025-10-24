@@ -77,6 +77,10 @@ A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 
     ![Get Reservation Pagination ](../Screenshots/frontEndReservaPagination.png)
 
+- 📬 Real-Time Telemetry — Simulated IoT Input
+
+    ![FrontEndTelemetriaListado](../Screenshots/frontEndTelemetriaListado.png)
+
 - 📬 Reserva Validation Max Reservation
 
     ![Reserva Validation Max Reserva](../Screenshots/frontEndReservaValidationMaxReserva.png)
@@ -88,10 +92,6 @@ A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 - 💻 Reserva Validation Required Fields
 
     ![ReservaValidationRequiredFields](../Screenshots/frontEndReservaValidationRequiredFields.png)
-
-- 📬 Telemetria List
-
-    ![FrontEndTelemetriaListado](../Screenshots/frontEndTelemetriaListado.png)
 
 
 

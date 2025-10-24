@@ -74,7 +74,7 @@ A continuación se muestran ejemplos visuales del sistema en funcionamiento:
     ![Spaces List](../Screenshots/frontEndListSpaces.png)
 
 - 📊 Get Reservation Pagination   
-    ![Get Reservation Pagination ](../Screenshots/frontEndReservaPagination .png)
+    ![Get Reservation Pagination ](../Screenshots/frontEndReservaPagination.png)
 
 - 📬 Reserva Validation Email Format
     ![Reserva Validation Email Format](../Screenshots/frontEndReservaValidationEmailFormat.png)

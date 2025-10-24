@@ -77,6 +77,7 @@ npm run dev
 📌 visualización de reservas con paginación, 
 📌 creación y eliminación de reservas, 
 📌 detalle de espacio, 
+📌 Validación de campos en el formulario de reserva, incluyendo verificación del formato de email en tiempo real mientras el usuario escribe.
 ✅ validación de formularios, 
 ⚠️ manejo de errores con retroalimentación al usuario, 
 🔐 autenticación por API Key, 

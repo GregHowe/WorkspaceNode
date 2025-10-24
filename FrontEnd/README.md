@@ -35,10 +35,12 @@ Funcionalidades implementadas:
 📌 Creación de reservas (POST /reservas) 
 📌 Eliminación de reservas (DELETE /reservas/:id) 
 📌 Detalle de espacio 
+📌 Validación de campos en el formulario de reserva, incluyendo verificación del formato de email en tiempo real mientras el usuario escribe.
 ✅ Validación de formularios 
 ⚠️ Manejo de errores con retroalimentación al usuario 
 🔐 Autenticación por API Key 
 📊 Dashboard en tiempo real para administradores (bonus IoT)
+
 ```
 
 Bonus IoT: 

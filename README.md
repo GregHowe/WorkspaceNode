@@ -55,6 +55,7 @@ npm install
 ```
 VITE_API_URL=http://localhost:8181
 VITE_API_KEY=mi_api_key_valida
+VITE_WS_PORT=3000
 
 ```
 

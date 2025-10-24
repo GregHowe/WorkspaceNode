@@ -6,7 +6,6 @@ Durante el desarrollo del sistema de gestión de reservas, se utilizó inteligen
 
 ## 🧩 Asistencia puntual
 
-- Generación de ejemplos de pruebas unitarias e integración  
 - Diagnóstico de errores comunes durante el testing  
 - Revisión de formato Markdown para documentación (`README.md`)  
 - Sugerencias para estructurar mensajes técnicos y explicativos  
@@ -15,7 +14,7 @@ Durante el desarrollo del sistema de gestión de reservas, se utilizó inteligen
 
 ## 🧠 Contexto de uso
 
-La inteligencia artificial fue utilizada como complemento puntual durante el desarrollo del backend, frontend y documentación. Su participación se limitó a momentos específicos donde se requería acelerar el análisis, validar ideas o mejorar la presentación de entregables.
+La inteligencia artificial fue utilizada como complemento puntual durante el desarrollo de la  backend, frontend y documentación. Su participación se limitó a momentos específicos donde se requería acelerar el análisis, validar ideas o mejorar la presentación de entregables.
 
 ---
 

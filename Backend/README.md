@@ -76,6 +76,19 @@ Incluye:
 ```
 ---
 
+✅ Tests incluidos
+
+El backend incluye pruebas unitarias y de integración para validar las reglas de negocio:
+
+    🧪 checkWeeklyLimit.test.ts Prueba de integración que simula reservas reales en base de datos y verifica si el cliente supera el límite semanal de 3 reservas.
+
+    🧪 isWeeklyLimitExceeded.test.ts Prueba unitaria que valida la función lógica que determina si el número de reservas excede el máximo permitido.
+
+Estas pruebas aseguran que la lógica de restricción semanal funciona correctamente tanto a nivel de función como en escenarios reales con base de datos.
+
+---
+
+
 ## 📡 Bonus IoT
 ```
 📡 Suscripción al tópico MQTT: sites/SITE_A/offices/OFFICE_1/telemetry 

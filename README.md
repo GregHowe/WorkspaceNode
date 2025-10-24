@@ -9,8 +9,8 @@ Estructura del repositorio: coworking-reservas/
 Instalación y ejecución: 🔧 Clonar el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/coworking-reservas.git
-cd coworking-reservas
+git clone https://github.com/GregHowe/WorkspaceNode.git
+cd cWorkspaceNod
 
 ---
 

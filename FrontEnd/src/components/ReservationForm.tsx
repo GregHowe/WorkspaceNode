@@ -1,6 +1,9 @@
+import { validateEmail } from '../utils/emailValidation';
 import { validateReservation } from '../utils/validateReservation';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { submitReservation } from '../handlers/submitReservation';
+import SpaceSelector from '../components/SpaceSelector';
 
 interface Props {
   onReservationCreated: () => void;
@@ -52,36 +55,15 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
       spaceId: Number(selectedSpaceId)
     };
 
-    try {
-        await axios.post(`${apiUrl}/api/reservations`, reservationPayload, {
-              headers: { 'x-api-key': apiKey }
-            });
-        setMessage('✅ Reservation created successfully.');
-        setTimeout(() => {
-            setEmailClient('');
-            setReservationDate('');
-            setStartTime('');
-            setEndTime('');
-            setSelectedSpaceId('');
-            onReservationCreated();
-          }, 500); // medio segundo de margen
-        setEmailClient('');
-        setReservationDate('');
-        setStartTime('');
-        setEndTime('');
-        setSelectedSpaceId('');
-        onReservationCreated();
-      } catch (error) {
-        console.error('❌ Error al crear la reserva:', error);
-        const backendMessage = error.response?.data?.msg;
-        if (backendMessage === 'Weekly limit exceeded') {
-            setMessage('⚠️ You cannot make more than 3 reservations per week.');
-        } else if (backendMessage) {
-            setMessage(`❌  Business error: ${backendMessage}`);
-        } else {
-            setMessage('❌ Technical error while creating the reservation. Please try again.');
-        }
-      }
+    await submitReservation(reservationPayload, apiUrl, apiKey, setMessage, () => {
+      setEmailClient('');
+      setReservationDate('');
+      setStartTime('');
+      setEndTime('');
+      setSelectedSpaceId('');
+      onReservationCreated();
+    });
+
   };
 
   return (
@@ -96,15 +78,7 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
         onChange={e => {
           const value = e.target.value;
           setEmailClient(value);
-
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!value.trim()) {
-            setEmailError('❌ Email is required');
-          } else if (!emailRegex.test(value)) {
-            setEmailError('❌ Invalid email format');
-          } else {
-            setEmailError('');
-          }
+          setEmailError(validateEmail(value));
         }}
         className={emailError ? 'invalid' : ''}
       />
@@ -115,14 +89,11 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
       <span>Start Time: <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} /></span>
       <span>End Time:<input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} /></span>
       <span>Space: &nbsp;
-        <select          value={selectedSpaceId}           onChange={(e) => setSelectedSpaceId(e.target.value)}           >
-          <option value="">Selecciona un espacio</option>
-          {spaces.map((space) => (
-            <option key={space.id} value={space.id}>
-              {space.name} ({space.type}) - Capacidad: {space.capacity}
-            </option>
-          ))}
-        </select>
+      <SpaceSelector
+        spaces={spaces}
+        selectedSpaceId={selectedSpaceId}
+        onChange={setSelectedSpaceId}
+      />
       </span>
       
       <button type="submit">Reservar</button>

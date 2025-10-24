@@ -80,7 +80,8 @@ npm run dev
 
 📡 Bonus IoT
 ```
-el backend y frontend están conectados al tópico MQTT sites/SITE_A/offices/OFFICE_1/telemetry. Se procesan y visualizan los siguientes datos: 
+el backend y frontend están conectados al tópico MQTT sites/SITE_A/offices/OFFICE_1/telemetry. 
+Se procesan y visualizan los siguientes datos: 
     👥 ocupación, 
     🌫️ nivel de CO₂, 
     🌡️ temperatura, 
@@ -90,25 +91,26 @@ el backend y frontend están conectados al tópico MQTT sites/SITE_A/offices/OFF
 
 Pruebas: 
 ```
-El proyecto incluye pruebas automatizadas con Jest y Supertest. Se validan reglas de negocio como el límite semanal y la inserción de reservas reales en base de datos. Las pruebas se ejecutan con npm test desde la carpeta backend.
+El proyecto incluye pruebas automatizadas con Jest. 
+Se validan reglas de negocio como el límite semanal y la inserción de reservas reales en base de datos. Las pruebas se ejecutan con npm test desde la carpeta backend.
 ```
 
 Seguridad: 
 ```
-todos los endpoints están protegidos mediante autenticación por API Key. Debe enviarse en cada petición HTTP como header: x-api-key: mi_api_key_valida
+todos los endpoints están protegidos mediante autenticación por API Key. 
+Debe enviarse en cada petición HTTP como header: x-api-key: mi_api_key_valida
 ```
 
 ```
 🧠 Uso de Inteligencia Artificial
 ```
 Se utilizó IA como herramienta puntual para:
-
+```
  durante el desarrollo se utilizó 🤖 IA como apoyo puntual para 🧪 generar ejemplos de pruebas, 🛠️ diagnosticar errores comunes, 📝 revisar formato Markdown y 🧠 sugerir estructura modular. Todas las decisiones de arquitectura, lógica de negocio, validaciones y estructura modular fueron diseñadas y desarrolladas manualmente por el autor del proyecto. Ver archivo backend/IA.md para más detalles
 ```
 
-
-```
 ✅ Requisitos cumplidos: 
+```
     🧱 arquitectura modular con separación de responsabilidades, 
     🗃️ base de datos relacional con ORM, 
     🔐 autenticación por API Key, 

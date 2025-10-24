@@ -65,7 +65,7 @@ npm run dev
 ```
 
 🧩 Funcionalidades implementadas
-
+```
 📌 visualización de espacios disponibles, 
 📌 visualización de reservas con paginación, 
 📌 creación y eliminación de reservas, 
@@ -76,7 +76,7 @@ npm run dev
 🚫 restricción de máximo 3 reservas por semana por cliente, 
 ⛔ prevención de conflictos de horario, 
 📊 dashboard en tiempo real para administradores (bonus IoT).
-
+```
 
 📡 Bonus IoT
 ```

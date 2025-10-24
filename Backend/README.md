@@ -87,7 +87,7 @@ Incluye:
 A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 
 - 💻 Delete Reservation   
-    ![Formulario de reserva](./Screenshots/backendDeleteReservation.png)
+    ![Formulario de reserva](../Screenshots/backendDeleteReservation.png)
 
 - 📊 Get Reservation Pagination   
     ![Dashboard IoT](./Screenshots/backendGetReservationPagination.png)

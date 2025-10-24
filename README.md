@@ -1,6 +1,13 @@
 # 🧭 Sistema de Gestión de Reservas — Backend + Frontend + IoT
 
-Este proyecto resuelve la prueba técnica de Darien Technology para la gestión de reservas en espacios de coworking. Incluye 📘 backend en Node.js con TypeORM y MySQL, 💻 frontend en React con consumo de API protegida por API Key, y 📡 bonus IoT con integración MQTT para telemetría en tiempo real. El sistema permite a los clientes reservar salas de reuniones o áreas de trabajo compartido, valida ⛔ conflictos de horario y 🚫 límites semanales, y visualiza 📊 datos de sensores en tiempo real.
+Este proyecto resuelve la prueba técnica de Darien Technology para la gestión de reservas en espacios de coworking. Incluye 
+```
+📘 backend en Node.js con TypeORM y MySQL, 
+💻 frontend en React con consumo de API protegida por API Key, y 
+📡 bonus IoT con integración MQTT para telemetría en tiempo real. 
+```
+
+El sistema permite a los clientes reservar salas de reuniones o áreas de trabajo compartido, valida ⛔ conflictos de horario y 🚫 límites semanales, y visualiza 📊 datos de sensores en tiempo real.
 
 Estructura del repositorio: coworking-reservas/  
 ├── backend/ 🧠 API REST con lógica de negocio y telemetría  

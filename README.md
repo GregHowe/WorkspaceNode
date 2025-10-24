@@ -56,7 +56,7 @@ npm install
 VITE_API_URL=http://localhost:8181
 VITE_API_KEY=mi_api_key_valida
 VITE_WS_PORT=3000
-
+git 
 ```
 
 ▶️ Ejecutar en desarrollo:
@@ -66,14 +66,28 @@ npm run dev
 
 🧩 Funcionalidades implementadas
 
-📌 visualización de espacios disponibles, 📌 visualización de reservas con paginación, 📌 creación y eliminación de reservas, 📌 detalle de espacio, ✅ validación de formularios, ⚠️ manejo de errores con retroalimentación al usuario, 🔐 autenticación por API Key, 🚫 restricción de máximo 3 reservas por semana por cliente, ⛔ prevención de conflictos de horario, 📊 dashboard en tiempo real para administradores (bonus IoT).
-
+📌 visualización de espacios disponibles, 
+📌 visualización de reservas con paginación, 
+📌 creación y eliminación de reservas, 
+📌 detalle de espacio, 
+✅ validación de formularios, 
+⚠️ manejo de errores con retroalimentación al usuario, 
+🔐 autenticación por API Key, 
+🚫 restricción de máximo 3 reservas por semana por cliente, 
+⛔ prevención de conflictos de horario, 
+📊 dashboard en tiempo real para administradores (bonus IoT).
 
 
 📡 Bonus IoT
 ```
-el backend y frontend están conectados al tópico MQTT sites/SITE_A/offices/OFFICE_1/telemetry. Se procesan y visualizan los siguientes datos: 👥 ocupación, 🌫️ nivel de CO₂, 🌡️ temperatura, 💧 humedad y 🔋 nivel de batería.
+el backend y frontend están conectados al tópico MQTT sites/SITE_A/offices/OFFICE_1/telemetry. Se procesan y visualizan los siguientes datos: 
+    👥 ocupación, 
+    🌫️ nivel de CO₂, 
+    🌡️ temperatura, 
+    💧 humedad y 
+    🔋 nivel de batería.
 ```
+
 Pruebas: el proyecto incluye pruebas automatizadas con Jest y Supertest. Se validan reglas de negocio como el límite semanal y la inserción de reservas reales en base de datos. Las pruebas se ejecutan con npm test desde la carpeta backend.
 
 Seguridad: todos los endpoints están protegidos mediante autenticación por API Key. Debe enviarse en cada petición HTTP como header: x-api-key: mi_api_key_valida
@@ -88,9 +102,16 @@ Se utilizó IA como herramienta puntual para:
 
 
 ```
-✅ Requisitos cumplidos: 🧱 arquitectura modular con separación de responsabilidades, 🗃️ base de datos relacional con ORM, 🔐 autenticación por API Key, 🧪 pruebas unitarias e integración, 📄 documentación clara y precisa, 📡 bonus IoT implementado, 💻 frontend funcional con React, ⚙️ validaciones de negocio (conflictos de horario y límite semanal), ⚠️ gestión de errores con mensajes informativos.
+✅ Requisitos cumplidos: 
+    🧱 arquitectura modular con separación de responsabilidades, 
+    🗃️ base de datos relacional con ORM, 
+    🔐 autenticación por API Key, 
+    🧪 pruebas unitarias e integración, 
+    📄 documentación clara y precisa, 
+    📡 bonus IoT implementado, 
+    💻 frontend funcional con React, 
+    ⚙️ validaciones de negocio (conflictos de horario y límite semanal), 
+    ⚠️ gestión de errores con mensajes informativos.
 ```
 
-
 Tiempo de desarrollo: este proyecto fue desarrollado en 🕒 4 días, cumpliendo el plazo establecido por la prueba técnica.
-

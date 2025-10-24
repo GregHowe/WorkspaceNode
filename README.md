@@ -88,9 +88,15 @@ el backend y frontend están conectados al tópico MQTT sites/SITE_A/offices/OFF
     🔋 nivel de batería.
 ```
 
-Pruebas: el proyecto incluye pruebas automatizadas con Jest y Supertest. Se validan reglas de negocio como el límite semanal y la inserción de reservas reales en base de datos. Las pruebas se ejecutan con npm test desde la carpeta backend.
+Pruebas: 
+```
+El proyecto incluye pruebas automatizadas con Jest y Supertest. Se validan reglas de negocio como el límite semanal y la inserción de reservas reales en base de datos. Las pruebas se ejecutan con npm test desde la carpeta backend.
+```
 
-Seguridad: todos los endpoints están protegidos mediante autenticación por API Key. Debe enviarse en cada petición HTTP como header: x-api-key: mi_api_key_valida
+Seguridad: 
+```
+todos los endpoints están protegidos mediante autenticación por API Key. Debe enviarse en cada petición HTTP como header: x-api-key: mi_api_key_valida
+```
 
 ```
 🧠 Uso de Inteligencia Artificial

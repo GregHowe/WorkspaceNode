@@ -40,6 +40,7 @@ Funcionalidades implementadas:
 ⚠️ Manejo de errores con retroalimentación al usuario 
 🔐 Autenticación por API Key 
 📊 Dashboard en tiempo real para administradores (bonus IoT)
+📊 El dashboard incluye un mensaje visual que indica que es exclusivo para administradores, tal como lo solicita el PDF. No se implementa control de acceso real ya que no fue requerido.
 
 ```
 

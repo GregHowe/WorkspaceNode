@@ -57,7 +57,8 @@ useEffect(() => {
   return (
     <div>
       <h2>Telemetry Dashboard</h2>
-
+      <h2><p style={{ fontStyle: 'italic', color: '#888' }}>🔐 Sección exclusiva para administradores</p></h2>
+      
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
 

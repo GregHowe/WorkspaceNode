@@ -78,6 +78,7 @@ npm run dev
 📌 creación y eliminación de reservas, 
 📌 detalle de espacio, 
 📌 Validación de campos en el formulario de reserva, incluyendo verificación del formato de email en tiempo real mientras el usuario escribe.
+📊 El dashboard incluye un mensaje visual que indica que es exclusivo para administradores, tal como lo solicita el PDF. No se implementa control de acceso real ya que no fue requerido.
 ✅ validación de formularios, 
 ⚠️ manejo de errores con retroalimentación al usuario, 
 🔐 autenticación por API Key, 

@@ -149,10 +149,10 @@ A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 
 - 📬 Real-Time Telemetry — Simulated IoT Input
 
-    ![FrontEndTelemetriaListado](../Screenshots/frontEndTelemetriaListado.png)
+    ![FrontEndTelemetriaListado](./Screenshots/frontEndTelemetriaListado.png)
 
  - 📊 Get Reservation Pagination   
 
-     ![Get Reservation Pagination ](./Screenshots/backendGetReservationPagination.png)
+     ![Get Reservation Pagination](./Screenshots/backendGetReservationPagination.png)
 
 Tiempo de desarrollo: este proyecto fue desarrollado en 🕒 4 días, cumpliendo el plazo establecido por la prueba técnica.

@@ -65,4 +65,30 @@ Requisitos cumplidos:
   ✅ Documentación clara y precisa
 ```
 
+## 📸 Capturas de pantalla
+
+A continuación se muestran ejemplos visuales del sistema en funcionamiento:
+
+- 💻 Delete Reservation   
+    ![Delete Reservation](../Screenshots/backendDeleteReservation.png)
+
+- 📊 Get Reservation Pagination   
+    ![Get Reservation Pagination ](../Screenshots/backendGetReservationPagination.png)
+
+- 📬 Get Spaces  
+    ![PGet Spaces](../Screenshots/backendGetSpaces.png)
+
+- 💻 Get Telemetria
+    ![Get Telemetria](../Screenshots/BackendGetTelemetria.png)
+
+- 📬 Save Place
+    ![Save Place](../Screenshots/BackendSavePlace.png)
+
+- 📬 Save Reservations
+    ![Save Reservations](../Screenshots/BackendSaveReservations.png)
+
+- ⚠️ValidationApiKey
+    ![ValidationApiKey](../Screenshots/backendValidationApiKey.png)
+
+
 Tiempo de desarrollo: este módulo fue desarrollado como parte del proyecto completo en 🕒 4 días.

@@ -87,24 +87,24 @@ Incluye:
 A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 
 - 💻 Delete Reservation   
-    ![Formulario de reserva](../Screenshots/backendDeleteReservation.png)
+    ![Delete Reservation](../Screenshots/backendDeleteReservation.png)
 
 - 📊 Get Reservation Pagination   
-    ![Dashboard IoT](../Screenshots/backendGetReservationPagination.png)
+    ![Get Reservation Pagination ](../Screenshots/backendGetReservationPagination.png)
 
 - 📬 Get Spaces  
-    ![Postman éxito](../Screenshots/backendGetSpaces.png)
+    ![PGet Spaces](../Screenshots/backendGetSpaces.png)
 
 - 💻 Get Telemetria
-    ![Postman error](../Screenshots/BackendGetTelemetria.png)
+    ![Get Telemetria](../Screenshots/BackendGetTelemetria.png)
 
 - 📬 Save Place
-    ![Postman error](../Screenshots/BackendSavePlace.png)
+    ![Save Place](../Screenshots/BackendSavePlace.png)
 
 - 📬 Save Reservations
-    ![Postman error](../Screenshots/BackendSaveReservations.png)
+    ![Save Reservations](../Screenshots/BackendSaveReservations.png)
 
 - ⚠️ValidationApiKey
-    ![Postman error](../Screenshots/backendValidationApiKey.png)
+    ![ValidationApiKey](../Screenshots/backendValidationApiKey.png)
 
 

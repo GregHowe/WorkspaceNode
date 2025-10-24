@@ -77,7 +77,7 @@ return (
       </select>
 
       <button onClick={() => setPage(prev => Math.max(prev - 1, 1))}>Previous</button>
-      <span style={{ margin: '0 1rem' }}>Page {page}</span>
+      <span style={{ margin: '0 1rem' }}>Page {page} of {maxPage} — {total} reservas</span>
       <button        onClick={() => setPage(prev => prev + 1)}        disabled={page >= maxPage}>
         Next
       </button>

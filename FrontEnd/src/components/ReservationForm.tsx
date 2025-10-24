@@ -57,6 +57,14 @@ const ReservationForm: React.FC<Props> = ({ onReservationCreated }) => {
               headers: { 'x-api-key': apiKey }
             });
         setMessage('✅ Reservation created successfully.');
+        setTimeout(() => {
+            setEmailClient('');
+            setReservationDate('');
+            setStartTime('');
+            setEndTime('');
+            setSelectedSpaceId('');
+            onReservationCreated();
+          }, 500); // medio segundo de margen
         setEmailClient('');
         setReservationDate('');
         setStartTime('');

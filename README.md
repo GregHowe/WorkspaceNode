@@ -49,7 +49,7 @@ MQTT_TOPIC=sites/SITE_A/offices/OFFICE_1/telemetry
 🧪 Ejecutar pruebas:
 ```npm test```
 
-Incluye ✅ test unitario para la lógica de límite semanal (checkWeeklyLimit) y ✅ test de integración para validación de reservas en base de datos.
+Incluye ✅ test unitario para la lógica de límite semanal (checkWeeklyLimit) y ✅ test de integración para validación del límite semanal en base de datos.
 
 
 💻 Frontend

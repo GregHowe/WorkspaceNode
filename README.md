@@ -106,7 +106,9 @@ Debe enviarse en cada petición HTTP como header: x-api-key: mi_api_key_valida
 ```
 Se utilizó IA como herramienta puntual para:
 ```
- durante el desarrollo se utilizó 🤖 IA como apoyo puntual para 🧪 generar ejemplos de pruebas, 🛠️ diagnosticar errores comunes, 📝 revisar formato Markdown y 🧠 sugerir estructura modular. Todas las decisiones de arquitectura, lógica de negocio, validaciones y estructura modular fueron diseñadas y desarrolladas manualmente por el autor del proyecto. Ver archivo backend/IA.md para más detalles
+ durante el desarrollo se utilizó 
+ 🤖 IA como apoyo puntual para 🧪 generar ejemplos de pruebas, 🛠️ diagnosticar errores comunes, 📝 revisar formato Markdown y 🧠 sugerir estructura modular. 
+ Todas las decisiones de arquitectura, lógica de negocio, validaciones y estructura modular fueron diseñadas y desarrolladas manualmente por el autor del proyecto. Ver archivo backend/IA.md para más detalles
 ```
 
 ✅ Requisitos cumplidos: 

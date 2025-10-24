@@ -3,11 +3,10 @@
 API RESTful desarrollada en Node.js para gestionar reservas en espacios de coworking. Permite a los clientes 
 
 ```
-reservar salas o áreas de trabajo, 
-valida ⛔ conflictos de horario y 
-🚫 límites semanales, y 
-se integra con telemetría 📡 
-IoT en tiempo real.
+- reservar salas o áreas de trabajo, 
+- valida ⛔ conflictos de horario y 🚫 límites semanales, y 
+- se integra con telemetría 📡 
+- IoT en tiempo real.
 ```
 
 Tecnologías utilizadas: 🧠 Node.js + Express, 🧪 TypeScript, 🗃️ TypeORM + MySQL, 📡 MQTT, 🧪 Jest + Supertest, ⚙️ Dotenv
@@ -15,10 +14,10 @@ Tecnologías utilizadas: 🧠 Node.js + Express, 🧪 TypeScript, 🗃️ TypeOR
 Instalación:
 
 ```bash
-git clone https://github.com/tu-usuario/coworking-reservas.git
-cd coworking-reservas/backend
+git clone https://github.com/GregHowe/WorkspaceNode.git
+cd WorkspaceNode/backend
 npm install
-
+```
 
 ---
 

@@ -114,4 +114,10 @@ A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 
     ![ValidationApiKey](../Screenshots/backendValidationApiKey.png)
 
+- ⚠️Unit and Integration Test
+
+    ![Unit and Integration Test](../Screenshots/BackendUnitAndIntegrationTest.png)
+
+    
+
 Tiempo de desarrollo: este módulo fue desarrollado como parte del proyecto completo en 🕒 4 días.

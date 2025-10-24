@@ -51,8 +51,6 @@ cd frontend
 npm install
 ```
 
-```
-```
 🛠️ Crear archivo .env con:
 ```
 VITE_API_URL=http://localhost:8181

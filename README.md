@@ -137,11 +137,10 @@ Se utilizó IA como herramienta puntual para:
 
 A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 
-- 💻 Spaces List  
-    ![Spaces List](./Screenshots/frontEndListSpaces.png)
+- 📬 Telemetria List
+    ![FrontEndTelemetriaListado](../Screenshots/frontEndTelemetriaListado.png)
 
  - 📊 Get Reservation Pagination   
         ![Get Reservation Pagination ](./Screenshots/backendGetReservationPagination.png)
-
 
 Tiempo de desarrollo: este proyecto fue desarrollado en 🕒 4 días, cumpliendo el plazo establecido por la prueba técnica.

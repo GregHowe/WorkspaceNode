@@ -75,6 +75,9 @@ A continuación se muestran ejemplos visuales del sistema en funcionamiento:
 - 📊 Get Reservation Pagination   
     ![Get Reservation Pagination ](../Screenshots/frontEndReservaPagination.png)
 
+- 📬 Reserva Validation Max Reservation
+    ![Reserva Validation Max Reserva](../Screenshots/frontEndReservaValidationMaxReserva.png)
+
 - 📬 Reserva Validation Email Format
     ![Reserva Validation Email Format](../Screenshots/frontEndReservaValidationEmailFormat.png)
 
